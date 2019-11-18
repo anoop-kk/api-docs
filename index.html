@@ -29,29 +29,80 @@
   <section>
     <div class="container">
       <ul class="docs-nav" id="menu-left">
-        <li><strong>Getting Started</strong></li>
-        <li><a href="#welcome" class=" ">Welcome</a></li>
-        <li><a href="#welcome" class=" ">Welcome</a></li>
-        <li><a href="#welcome" class=" ">Welcome</a></li>
-        <li><a href="#welcome" class=" ">Welcome</a></li>
-        <li><a href="#welcome" class=" ">Welcome</a></li>
+        <li><strong>Identity</strong></li>
+        <li><a href="#confirm_code" class=" "><span class="post">POST</span> kyc/confirm_code</a></li>
+        <li><a href="#generate_code" class=" "><span class="get">GET</span> kyc/generate_code</a></li>
+        <li><a href="#sessions" class=" "><span class="delete">DELETE</span> kyc/sessions</a></li>
       </ul>
       <div class="docs-content">
-        <h2> Getting Started</h2>
-        <h3 id="welcome"> Welcome</h3>
-        <p> Are you listening to your customers?</p>
-
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.</p>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
-        </ul>
+        <h3 id="confirm_code">Confirm Code</h3>
+        <pre class="prettyprint">&lt;post&gt;
+          {
+            "description": "Sets new account password",
+            "produces": [
+                "application/json"
+            ],
+            "consumes": [
+                "application/json"
+            ],
+            "parameters": [
+                {
+                    "in": "formData",
+                    "name": "reset_password_token",
+                    "description": "Token from email",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "in": "formData",
+                    "name": "password",
+                    "description": "User password",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "in": "formData",
+                    "name": "confirm_password",
+                    "description": "User password",
+                    "type": "string",
+                    "required": true
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Resets password"
+                },
+                "400": {
+                    "description": "Required params are empty"
+                },
+                "404": {
+                    "description": "Record is not found"
+                },
+                "422": {
+                    "description": "Validation errors"
+                }
+            },
+            "tags": [
+                "identity"
+            ],
+            "operationId": "postIdentityUsersPasswordConfirmCode"
+        }
+&lt;/post&gt;</pre>
+      </div>
+      <div class="docs-content">
+        <h3 id="generate_code">Generate Code</h3>
+        <pre class="prettyprint">&lt;script&gt;
+      	$(document).ready(function (){
+        $('#DefaultOptions').opineo('results.php', {curvalue:3,
+            view: 'detailed',
+            animation_speed: 'super',
+            show_total_votes_counter: false,
+            show_overall_rating: true});
+         })
+&lt;/script&gt;</pre>
+      </div>
+      <div class="docs-content">
+        <h3 id="sessions"> Sessions</h3>
         <pre class="prettyprint">&lt;script&gt;
       	$(document).ready(function (){
         $('#DefaultOptions').opineo('results.php', {curvalue:3,
