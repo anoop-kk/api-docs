@@ -421,6 +421,14 @@ input:focus {
         padding-left: 310px;
         width: 50%
     }
+    .docs-content-main {
+        padding-left: 0px;
+        width: 100%
+    }
+    .docs-content-second {
+        padding-left: 500px;
+        width: 50%
+    }
 
 
 
@@ -469,3 +477,34 @@ input:focus {
     margin-right: 10px;
 }
 
+.section-main {
+    display: flex;
+    padding-left: 310px;
+  }
+  .section-post {
+    width: 50%;
+    /* background: lightblue; */
+    margin: 5px;
+    /* Just so it's visible */
+  }
+  .section-info {
+    flex: 2;
+    /* Grow to rest of container */
+    /* background: lightgreen; */
+    margin-left: 5px;
+    /* margin-top: 56px; */
+    /* Just so it's visible */
+  }
+  .button-span {
+      padding: 10px;
+      display: inline;
+      border-radius: 2px;
+      border: 0;
+      margin: 0 10px;
+      color: white;
+      background: red;
+      width:auto;
+      height: auto;
+      box-sizing: content-box;
+      font-size: 12px;
+  }
